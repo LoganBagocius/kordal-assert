@@ -1,0 +1,1557 @@
+[
+  {
+    "trace": [
+      {
+        "step": "load_case",
+        "data": {
+          "case_id": "CS-4101",
+          "case_type": "refund"
+        }
+      },
+      {
+        "step": "check_eligibility_window",
+        "data": {
+          "age_days": 45,
+          "window_days": 30
+        }
+      },
+      {
+        "step": "issue_refund",
+        "data": {
+          "refund_amount": 89.99,
+          "currency": "USD"
+        }
+      }
+    ],
+    "expect": [
+      "age_gate"
+    ]
+  },
+  {
+    "trace": [
+      {
+        "step": "load_case",
+        "data": {
+          "case_id": "CS-4102",
+          "case_type": "subscription"
+        }
+      },
+      {
+        "step": "check_eligibility_window",
+        "data": {
+          "age_days": 92,
+          "window_days": 60
+        }
+      },
+      {
+        "step": "approve",
+        "data": {
+          "request_id": "APR-10482",
+          "approval_limit": 500
+        }
+      }
+    ],
+    "expect": [
+      "age_gate"
+    ]
+  },
+  {
+    "trace": [
+      {
+        "step": "load_case",
+        "data": {
+          "case_id": "CS-4103",
+          "case_type": "invoice"
+        }
+      },
+      {
+        "step": "check_eligibility_window",
+        "data": {
+          "age_days": 75,
+          "window_days": 45
+        }
+      },
+      {
+        "step": "update_record",
+        "data": {
+          "record_id": "INV-20841",
+          "status": "paid"
+        }
+      }
+    ],
+    "expect": [
+      "age_gate"
+    ]
+  },
+  {
+    "trace": [
+      {
+        "step": "load_case",
+        "data": {
+          "case_id": "CS-4104",
+          "case_type": "chargeback"
+        }
+      },
+      {
+        "step": "check_eligibility_window",
+        "data": {
+          "age_days": 120,
+          "window_days": 90
+        }
+      },
+      {
+        "step": "issue_refund",
+        "data": {
+          "refund_amount": 149.5,
+          "currency": "USD"
+        }
+      }
+    ],
+    "expect": [
+      "age_gate"
+    ]
+  },
+  {
+    "trace": [
+      {
+        "step": "load_case",
+        "data": {
+          "case_id": "CS-4105",
+          "case_type": "credit"
+        }
+      },
+      {
+        "step": "check_eligibility_window",
+        "data": {
+          "age_days": 61,
+          "window_days": 30
+        }
+      },
+      {
+        "step": "approve",
+        "data": {
+          "request_id": "APR-10519",
+          "credit_amount": 250
+        }
+      }
+    ],
+    "expect": [
+      "age_gate"
+    ]
+  },
+  {
+    "trace": [
+      {
+        "step": "load_case",
+        "data": {
+          "case_id": "CS-4106",
+          "case_type": "payout"
+        }
+      },
+      {
+        "step": "check_eligibility_window",
+        "data": {
+          "age_days": 38,
+          "window_days": 14
+        }
+      },
+      {
+        "step": "update_record",
+        "data": {
+          "record_id": "PAY-77102",
+          "status": "released"
+        }
+      }
+    ],
+    "expect": [
+      "age_gate"
+    ]
+  },
+  {
+    "trace": [
+      {
+        "step": "load_case",
+        "data": {
+          "case_id": "CS-4107",
+          "case_type": "return"
+        }
+      },
+      {
+        "step": "check_eligibility_window",
+        "data": {
+          "age_days": 50,
+          "window_days": 30
+        }
+      },
+      {
+        "step": "issue_refund",
+        "data": {
+          "refund_amount": 42.0,
+          "currency": "USD"
+        }
+      }
+    ],
+    "expect": [
+      "age_gate"
+    ]
+  },
+  {
+    "trace": [
+      {
+        "step": "load_case",
+        "data": {
+          "case_id": "CS-4108",
+          "case_type": "fee_waiver"
+        }
+      },
+      {
+        "step": "check_eligibility_window",
+        "data": {
+          "age_days": 100,
+          "window_days": 90
+        }
+      },
+      {
+        "step": "approve",
+        "data": {
+          "request_id": "APR-10577",
+          "waiver_amount": 35
+        }
+      }
+    ],
+    "expect": [
+      "age_gate"
+    ]
+  },
+  {
+    "trace": [
+      {
+        "step": "load_case",
+        "data": {
+          "case_id": "CS-4109",
+          "case_type": "billing"
+        }
+      },
+      {
+        "step": "check_eligibility_window",
+        "data": {
+          "age_days": 67,
+          "window_days": 60
+        }
+      },
+      {
+        "step": "update_record",
+        "data": {
+          "record_id": "CUS-33018",
+          "billing_status": "corrected"
+        }
+      }
+    ],
+    "expect": [
+      "age_gate"
+    ]
+  },
+  {
+    "trace": [
+      {
+        "step": "load_case",
+        "data": {
+          "case_id": "CS-4110",
+          "case_type": "duplicate"
+        }
+      },
+      {
+        "step": "check_eligibility_window",
+        "data": {
+          "age_days": 31,
+          "window_days": 14
+        }
+      },
+      {
+        "step": "issue_refund",
+        "data": {
+          "refund_amount": 19.95,
+          "currency": "USD"
+        }
+      }
+    ],
+    "expect": [
+      "age_gate"
+    ]
+  },
+  {
+    "trace": [
+      {
+        "step": "load_case",
+        "data": {
+          "case_id": "CS-4111",
+          "case_type": "reimbursement"
+        }
+      },
+      {
+        "step": "check_eligibility_window",
+        "data": {
+          "age_days": 180,
+          "window_days": 120
+        }
+      },
+      {
+        "step": "approve",
+        "data": {
+          "request_id": "APR-10603",
+          "reimbursement_amount": 620
+        }
+      }
+    ],
+    "expect": [
+      "age_gate"
+    ]
+  },
+  {
+    "trace": [
+      {
+        "step": "load_case",
+        "data": {
+          "case_id": "CS-4112",
+          "case_type": "account"
+        }
+      },
+      {
+        "step": "check_eligibility_window",
+        "data": {
+          "age_days": 44,
+          "window_days": 30
+        }
+      },
+      {
+        "step": "update_record",
+        "data": {
+          "record_id": "ACC-90217",
+          "review_status": "complete"
+        }
+      }
+    ],
+    "expect": [
+      "age_gate"
+    ]
+  },
+  {
+    "trace": [
+      {
+        "step": "load_case",
+        "data": {
+          "case_id": "CS-4113",
+          "case_type": "service"
+        }
+      },
+      {
+        "step": "check_eligibility_window",
+        "data": {
+          "age_days": 88,
+          "window_days": 60
+        }
+      },
+      {
+        "step": "issue_refund",
+        "data": {
+          "refund_amount": 74.25,
+          "currency": "USD"
+        }
+      }
+    ],
+    "expect": [
+      "age_gate"
+    ]
+  },
+  {
+    "trace": [
+      {
+        "step": "load_case",
+        "data": {
+          "case_id": "CS-4114",
+          "case_type": "vendor"
+        }
+      },
+      {
+        "step": "check_eligibility_window",
+        "data": {
+          "age_days": 29,
+          "window_days": 21
+        }
+      },
+      {
+        "step": "approve",
+        "data": {
+          "request_id": "APR-10644",
+          "payment_amount": 1200
+        }
+      }
+    ],
+    "expect": [
+      "age_gate"
+    ]
+  },
+  {
+    "trace": [
+      {
+        "step": "load_case",
+        "data": {
+          "case_id": "CS-4115",
+          "case_type": "transaction"
+        }
+      },
+      {
+        "step": "check_eligibility_window",
+        "data": {
+          "age_days": 210,
+          "window_days": 180
+        }
+      },
+      {
+        "step": "update_record",
+        "data": {
+          "record_id": "TXN-55091",
+          "dispute_status": "closed"
+        }
+      }
+    ],
+    "expect": [
+      "age_gate"
+    ]
+  },
+  {
+    "trace": [
+      {
+        "step": "capture_case_metadata",
+        "data": {
+          "case_id": "CS-5201",
+          "age_days": 12
+        }
+      },
+      {
+        "step": "verify_customer",
+        "data": {
+          "customer_id": "CUS-7001",
+          "identity_verified": true
+        }
+      },
+      {
+        "step": "review_transaction",
+        "data": {
+          "transaction_id": "TXN-8101",
+          "amount": 88
+        }
+      },
+      {
+        "step": "issue_refund",
+        "data": {
+          "refund_amount": 64.0,
+          "currency": "USD"
+        }
+      }
+    ],
+    "expect": [
+      "unused_field"
+    ]
+  },
+  {
+    "trace": [
+      {
+        "step": "capture_case_metadata",
+        "data": {
+          "case_id": "CS-5202",
+          "effective_date": "2026-01-15"
+        }
+      },
+      {
+        "step": "verify_customer",
+        "data": {
+          "customer_id": "CUS-7002",
+          "identity_verified": true
+        }
+      },
+      {
+        "step": "review_transaction",
+        "data": {
+          "transaction_id": "TXN-8102",
+          "amount": 101
+        }
+      },
+      {
+        "step": "update_record",
+        "data": {
+          "record_id": "INV-30111",
+          "status": "reconciled"
+        }
+      }
+    ],
+    "expect": [
+      "unused_field"
+    ]
+  },
+  {
+    "trace": [
+      {
+        "step": "capture_case_metadata",
+        "data": {
+          "case_id": "CS-5203",
+          "age_days": 27
+        }
+      },
+      {
+        "step": "verify_customer",
+        "data": {
+          "customer_id": "CUS-7003",
+          "identity_verified": true
+        }
+      },
+      {
+        "step": "review_transaction",
+        "data": {
+          "transaction_id": "TXN-8103",
+          "amount": 114
+        }
+      },
+      {
+        "step": "approve",
+        "data": {
+          "request_id": "APR-20101",
+          "approval_limit": 300
+        }
+      }
+    ],
+    "expect": [
+      "unused_field"
+    ]
+  },
+  {
+    "trace": [
+      {
+        "step": "capture_case_metadata",
+        "data": {
+          "case_id": "CS-5204",
+          "effective_date": "2025-12-01"
+        }
+      },
+      {
+        "step": "verify_customer",
+        "data": {
+          "customer_id": "CUS-7004",
+          "identity_verified": true
+        }
+      },
+      {
+        "step": "review_transaction",
+        "data": {
+          "transaction_id": "TXN-8104",
+          "amount": 127
+        }
+      },
+      {
+        "step": "issue_refund",
+        "data": {
+          "refund_amount": 118.4,
+          "currency": "USD"
+        }
+      }
+    ],
+    "expect": [
+      "unused_field"
+    ]
+  },
+  {
+    "trace": [
+      {
+        "step": "capture_case_metadata",
+        "data": {
+          "case_id": "CS-5205",
+          "age_days": 5
+        }
+      },
+      {
+        "step": "verify_customer",
+        "data": {
+          "customer_id": "CUS-7005",
+          "identity_verified": true
+        }
+      },
+      {
+        "step": "review_transaction",
+        "data": {
+          "transaction_id": "TXN-8105",
+          "amount": 140
+        }
+      },
+      {
+        "step": "update_record",
+        "data": {
+          "record_id": "CUS-44012",
+          "account_tier": "standard"
+        }
+      }
+    ],
+    "expect": [
+      "unused_field"
+    ]
+  },
+  {
+    "trace": [
+      {
+        "step": "capture_case_metadata",
+        "data": {
+          "case_id": "CS-5206",
+          "effective_date": "2026-02-10"
+        }
+      },
+      {
+        "step": "verify_customer",
+        "data": {
+          "customer_id": "CUS-7006",
+          "identity_verified": true
+        }
+      },
+      {
+        "step": "review_transaction",
+        "data": {
+          "transaction_id": "TXN-8106",
+          "amount": 153
+        }
+      },
+      {
+        "step": "approve",
+        "data": {
+          "request_id": "APR-20138",
+          "credit_amount": 175
+        }
+      }
+    ],
+    "expect": [
+      "unused_field"
+    ]
+  },
+  {
+    "trace": [
+      {
+        "step": "capture_case_metadata",
+        "data": {
+          "case_id": "CS-5207",
+          "age_days": 41
+        }
+      },
+      {
+        "step": "verify_customer",
+        "data": {
+          "customer_id": "CUS-7007",
+          "identity_verified": true
+        }
+      },
+      {
+        "step": "review_transaction",
+        "data": {
+          "transaction_id": "TXN-8107",
+          "amount": 166
+        }
+      },
+      {
+        "step": "issue_refund",
+        "data": {
+          "refund_amount": 29.99,
+          "currency": "USD"
+        }
+      }
+    ],
+    "expect": [
+      "unused_field"
+    ]
+  },
+  {
+    "trace": [
+      {
+        "step": "capture_case_metadata",
+        "data": {
+          "case_id": "CS-5208",
+          "effective_date": "2025-11-20"
+        }
+      },
+      {
+        "step": "verify_customer",
+        "data": {
+          "customer_id": "CUS-7008",
+          "identity_verified": true
+        }
+      },
+      {
+        "step": "review_transaction",
+        "data": {
+          "transaction_id": "TXN-8108",
+          "amount": 179
+        }
+      },
+      {
+        "step": "update_record",
+        "data": {
+          "record_id": "PAY-88203",
+          "payment_status": "verified"
+        }
+      }
+    ],
+    "expect": [
+      "unused_field"
+    ]
+  },
+  {
+    "trace": [
+      {
+        "step": "capture_case_metadata",
+        "data": {
+          "case_id": "CS-5209",
+          "age_days": 18
+        }
+      },
+      {
+        "step": "verify_customer",
+        "data": {
+          "customer_id": "CUS-7009",
+          "identity_verified": true
+        }
+      },
+      {
+        "step": "review_transaction",
+        "data": {
+          "transaction_id": "TXN-8109",
+          "amount": 192
+        }
+      },
+      {
+        "step": "approve",
+        "data": {
+          "request_id": "APR-20182",
+          "waiver_amount": 50
+        }
+      }
+    ],
+    "expect": [
+      "unused_field"
+    ]
+  },
+  {
+    "trace": [
+      {
+        "step": "capture_case_metadata",
+        "data": {
+          "case_id": "CS-5210",
+          "effective_date": "2026-03-01"
+        }
+      },
+      {
+        "step": "verify_customer",
+        "data": {
+          "customer_id": "CUS-7010",
+          "identity_verified": true
+        }
+      },
+      {
+        "step": "review_transaction",
+        "data": {
+          "transaction_id": "TXN-8110",
+          "amount": 205
+        }
+      },
+      {
+        "step": "issue_refund",
+        "data": {
+          "refund_amount": 205.0,
+          "currency": "USD"
+        }
+      }
+    ],
+    "expect": [
+      "unused_field"
+    ]
+  },
+  {
+    "trace": [
+      {
+        "step": "capture_case_metadata",
+        "data": {
+          "case_id": "CS-5211",
+          "age_days": 9
+        }
+      },
+      {
+        "step": "verify_customer",
+        "data": {
+          "customer_id": "CUS-7011",
+          "identity_verified": true
+        }
+      },
+      {
+        "step": "review_transaction",
+        "data": {
+          "transaction_id": "TXN-8111",
+          "amount": 218
+        }
+      },
+      {
+        "step": "update_record",
+        "data": {
+          "record_id": "ACC-55109",
+          "contact_status": "confirmed"
+        }
+      }
+    ],
+    "expect": [
+      "unused_field"
+    ]
+  },
+  {
+    "trace": [
+      {
+        "step": "capture_case_metadata",
+        "data": {
+          "case_id": "CS-5212",
+          "effective_date": "2026-04-05"
+        }
+      },
+      {
+        "step": "verify_customer",
+        "data": {
+          "customer_id": "CUS-7012",
+          "identity_verified": true
+        }
+      },
+      {
+        "step": "review_transaction",
+        "data": {
+          "transaction_id": "TXN-8112",
+          "amount": 231
+        }
+      },
+      {
+        "step": "approve",
+        "data": {
+          "request_id": "APR-20224",
+          "reimbursement_amount": 410
+        }
+      }
+    ],
+    "expect": [
+      "unused_field"
+    ]
+  },
+  {
+    "trace": [
+      {
+        "step": "capture_case_metadata",
+        "data": {
+          "case_id": "CS-5213",
+          "age_days": 33
+        }
+      },
+      {
+        "step": "verify_customer",
+        "data": {
+          "customer_id": "CUS-7013",
+          "identity_verified": true
+        }
+      },
+      {
+        "step": "review_transaction",
+        "data": {
+          "transaction_id": "TXN-8113",
+          "amount": 244
+        }
+      },
+      {
+        "step": "issue_refund",
+        "data": {
+          "refund_amount": 86.75,
+          "currency": "USD"
+        }
+      }
+    ],
+    "expect": [
+      "unused_field"
+    ]
+  },
+  {
+    "trace": [
+      {
+        "step": "capture_case_metadata",
+        "data": {
+          "case_id": "CS-5214",
+          "effective_date": "2025-10-30"
+        }
+      },
+      {
+        "step": "verify_customer",
+        "data": {
+          "customer_id": "CUS-7014",
+          "identity_verified": true
+        }
+      },
+      {
+        "step": "review_transaction",
+        "data": {
+          "transaction_id": "TXN-8114",
+          "amount": 257
+        }
+      },
+      {
+        "step": "update_record",
+        "data": {
+          "record_id": "TXN-66071",
+          "review_status": "resolved"
+        }
+      }
+    ],
+    "expect": [
+      "unused_field"
+    ]
+  },
+  {
+    "trace": [
+      {
+        "step": "capture_case_metadata",
+        "data": {
+          "case_id": "CS-5215",
+          "age_days": 22
+        }
+      },
+      {
+        "step": "verify_customer",
+        "data": {
+          "customer_id": "CUS-7015",
+          "identity_verified": true
+        }
+      },
+      {
+        "step": "review_transaction",
+        "data": {
+          "transaction_id": "TXN-8115",
+          "amount": 270
+        }
+      },
+      {
+        "step": "approve",
+        "data": {
+          "request_id": "APR-20279",
+          "payment_amount": 950
+        }
+      }
+    ],
+    "expect": [
+      "unused_field"
+    ]
+  },
+  {
+    "trace": [
+      {
+        "step": "read_account_policy",
+        "data": {
+          "policy_id": "POL-901",
+          "account_status": "active"
+        }
+      },
+      {
+        "step": "extract_constraint",
+        "data": {
+          "constraint_name": "refund_cap",
+          "constraint_value": 100
+        }
+      },
+      {
+        "step": "issue_refund",
+        "data": {
+          "refund_amount": 150,
+          "currency": "USD"
+        }
+      }
+    ],
+    "expect": [
+      "constraint"
+    ]
+  },
+  {
+    "trace": [
+      {
+        "step": "read_account_policy",
+        "data": {
+          "policy_id": "POL-902",
+          "account_status": "active"
+        }
+      },
+      {
+        "step": "extract_constraint",
+        "data": {
+          "constraint_name": "approval_limit",
+          "constraint_value": 500
+        }
+      },
+      {
+        "step": "approve",
+        "data": {
+          "request_id": "APR-30102",
+          "approval_amount": 750
+        }
+      }
+    ],
+    "expect": [
+      "constraint"
+    ]
+  },
+  {
+    "trace": [
+      {
+        "step": "read_account_policy",
+        "data": {
+          "policy_id": "POL-903",
+          "account_status": "active"
+        }
+      },
+      {
+        "step": "extract_constraint",
+        "data": {
+          "constraint_name": "credit_ceiling",
+          "constraint_value": 250
+        }
+      },
+      {
+        "step": "update_record",
+        "data": {
+          "record_id": "CUS-61002",
+          "credit_limit": 400
+        }
+      }
+    ],
+    "expect": [
+      "constraint"
+    ]
+  },
+  {
+    "trace": [
+      {
+        "step": "read_account_policy",
+        "data": {
+          "policy_id": "POL-904",
+          "account_status": "active"
+        }
+      },
+      {
+        "step": "extract_constraint",
+        "data": {
+          "constraint_name": "refund_cap",
+          "constraint_value": 75
+        }
+      },
+      {
+        "step": "issue_refund",
+        "data": {
+          "refund_amount": 90,
+          "currency": "USD"
+        }
+      }
+    ],
+    "expect": [
+      "constraint"
+    ]
+  },
+  {
+    "trace": [
+      {
+        "step": "read_account_policy",
+        "data": {
+          "policy_id": "POL-905",
+          "account_status": "active"
+        }
+      },
+      {
+        "step": "extract_constraint",
+        "data": {
+          "constraint_name": "payout_limit",
+          "constraint_value": 1000
+        }
+      },
+      {
+        "step": "approve",
+        "data": {
+          "request_id": "APR-30147",
+          "payment_amount": 1400
+        }
+      }
+    ],
+    "expect": [
+      "constraint"
+    ]
+  },
+  {
+    "trace": [
+      {
+        "step": "read_account_policy",
+        "data": {
+          "policy_id": "POL-906",
+          "account_status": "active"
+        }
+      },
+      {
+        "step": "extract_constraint",
+        "data": {
+          "constraint_name": "writeoff_threshold",
+          "constraint_value": 300
+        }
+      },
+      {
+        "step": "update_record",
+        "data": {
+          "record_id": "INV-61055",
+          "writeoff_amount": 425
+        }
+      }
+    ],
+    "expect": [
+      "constraint"
+    ]
+  },
+  {
+    "trace": [
+      {
+        "step": "read_account_policy",
+        "data": {
+          "policy_id": "POL-907",
+          "account_status": "active"
+        }
+      },
+      {
+        "step": "extract_constraint",
+        "data": {
+          "constraint_name": "refund_cap",
+          "constraint_value": 200
+        }
+      },
+      {
+        "step": "issue_refund",
+        "data": {
+          "refund_amount": 225,
+          "currency": "USD"
+        }
+      }
+    ],
+    "expect": [
+      "constraint"
+    ]
+  },
+  {
+    "trace": [
+      {
+        "step": "read_account_policy",
+        "data": {
+          "policy_id": "POL-908",
+          "account_status": "active"
+        }
+      },
+      {
+        "step": "extract_constraint",
+        "data": {
+          "constraint_name": "approval_limit",
+          "constraint_value": 1200
+        }
+      },
+      {
+        "step": "approve",
+        "data": {
+          "request_id": "APR-30201",
+          "approval_amount": 1500
+        }
+      }
+    ],
+    "expect": [
+      "constraint"
+    ]
+  },
+  {
+    "trace": [
+      {
+        "step": "read_account_policy",
+        "data": {
+          "policy_id": "POL-909",
+          "account_status": "active"
+        }
+      },
+      {
+        "step": "extract_constraint",
+        "data": {
+          "constraint_name": "credit_ceiling",
+          "constraint_value": 800
+        }
+      },
+      {
+        "step": "update_record",
+        "data": {
+          "record_id": "CUS-61118",
+          "credit_limit": 950
+        }
+      }
+    ],
+    "expect": [
+      "constraint"
+    ]
+  },
+  {
+    "trace": [
+      {
+        "step": "read_account_policy",
+        "data": {
+          "policy_id": "POL-910",
+          "account_status": "active"
+        }
+      },
+      {
+        "step": "extract_constraint",
+        "data": {
+          "constraint_name": "payout_limit",
+          "constraint_value": 2500
+        }
+      },
+      {
+        "step": "approve",
+        "data": {
+          "request_id": "APR-30244",
+          "payment_amount": 2800
+        }
+      }
+    ],
+    "expect": [
+      "constraint"
+    ]
+  },
+  {
+    "trace": [
+      {
+        "step": "load_case",
+        "data": {
+          "case_id": "CS-6301",
+          "case_type": "billing_support"
+        }
+      },
+      {
+        "step": "validate_eligibility",
+        "data": {
+          "age_days": 8,
+          "window_days": 30
+        }
+      },
+      {
+        "step": "confirm_customer_request",
+        "data": {
+          "customer_confirmed": true,
+          "identity_verified": true
+        }
+      },
+      {
+        "step": "issue_refund",
+        "data": {
+          "refund_amount": 35.0,
+          "currency": "USD"
+        }
+      }
+    ],
+    "expect": []
+  },
+  {
+    "trace": [
+      {
+        "step": "load_case",
+        "data": {
+          "case_id": "CS-6302",
+          "case_type": "billing_support"
+        }
+      },
+      {
+        "step": "validate_eligibility",
+        "data": {
+          "age_days": 14,
+          "window_days": 45
+        }
+      },
+      {
+        "step": "confirm_customer_request",
+        "data": {
+          "customer_confirmed": true,
+          "identity_verified": true
+        }
+      },
+      {
+        "step": "approve",
+        "data": {
+          "request_id": "APR-40101",
+          "approval_amount": 200
+        }
+      }
+    ],
+    "expect": []
+  },
+  {
+    "trace": [
+      {
+        "step": "load_case",
+        "data": {
+          "case_id": "CS-6303",
+          "case_type": "billing_support"
+        }
+      },
+      {
+        "step": "validate_eligibility",
+        "data": {
+          "age_days": 3,
+          "window_days": 14
+        }
+      },
+      {
+        "step": "confirm_customer_request",
+        "data": {
+          "customer_confirmed": true,
+          "identity_verified": true
+        }
+      },
+      {
+        "step": "update_record",
+        "data": {
+          "record_id": "INV-70101",
+          "status": "paid"
+        }
+      }
+    ],
+    "expect": []
+  },
+  {
+    "trace": [
+      {
+        "step": "load_case",
+        "data": {
+          "case_id": "CS-6304",
+          "case_type": "billing_support"
+        }
+      },
+      {
+        "step": "validate_eligibility",
+        "data": {
+          "effective_date": "2026-11-01",
+          "window_days": 30
+        }
+      },
+      {
+        "step": "confirm_customer_request",
+        "data": {
+          "customer_confirmed": true,
+          "identity_verified": true
+        }
+      },
+      {
+        "step": "issue_refund",
+        "data": {
+          "refund_amount": 49.95,
+          "currency": "USD"
+        }
+      }
+    ],
+    "expect": []
+  },
+  {
+    "trace": [
+      {
+        "step": "load_case",
+        "data": {
+          "case_id": "CS-6305",
+          "case_type": "billing_support"
+        }
+      },
+      {
+        "step": "validate_eligibility",
+        "data": {
+          "age_days": 20,
+          "window_days": 60
+        }
+      },
+      {
+        "step": "confirm_customer_request",
+        "data": {
+          "customer_confirmed": true,
+          "identity_verified": true
+        }
+      },
+      {
+        "step": "approve",
+        "data": {
+          "request_id": "APR-40142",
+          "approval_amount": 450
+        }
+      }
+    ],
+    "expect": []
+  },
+  {
+    "trace": [
+      {
+        "step": "load_case",
+        "data": {
+          "case_id": "CS-6306",
+          "case_type": "billing_support"
+        }
+      },
+      {
+        "step": "validate_eligibility",
+        "data": {
+          "age_days": 6,
+          "window_days": 21
+        }
+      },
+      {
+        "step": "confirm_customer_request",
+        "data": {
+          "customer_confirmed": true,
+          "identity_verified": true
+        }
+      },
+      {
+        "step": "update_record",
+        "data": {
+          "record_id": "CUS-72016",
+          "account_status": "verified"
+        }
+      }
+    ],
+    "expect": []
+  },
+  {
+    "trace": [
+      {
+        "step": "load_case",
+        "data": {
+          "case_id": "CS-6307",
+          "case_type": "billing_support"
+        }
+      },
+      {
+        "step": "validate_eligibility",
+        "data": {
+          "age_days": 10,
+          "window_days": 30
+        }
+      },
+      {
+        "step": "confirm_customer_request",
+        "data": {
+          "customer_confirmed": true,
+          "identity_verified": true
+        }
+      },
+      {
+        "step": "issue_refund",
+        "data": {
+          "refund_amount": 80.0,
+          "currency": "USD"
+        }
+      }
+    ],
+    "expect": []
+  },
+  {
+    "trace": [
+      {
+        "step": "load_case",
+        "data": {
+          "case_id": "CS-6308",
+          "case_type": "billing_support"
+        }
+      },
+      {
+        "step": "validate_eligibility",
+        "data": {
+          "age_days": 25,
+          "window_days": 90
+        }
+      },
+      {
+        "step": "confirm_customer_request",
+        "data": {
+          "customer_confirmed": true,
+          "identity_verified": true
+        }
+      },
+      {
+        "step": "approve",
+        "data": {
+          "request_id": "APR-40208",
+          "payment_amount": 900
+        }
+      }
+    ],
+    "expect": []
+  },
+  {
+    "trace": [
+      {
+        "step": "load_case",
+        "data": {
+          "case_id": "CS-6309",
+          "case_type": "billing_support"
+        }
+      },
+      {
+        "step": "validate_eligibility",
+        "data": {
+          "age_days": 2,
+          "window_days": 7
+        }
+      },
+      {
+        "step": "confirm_customer_request",
+        "data": {
+          "customer_confirmed": true,
+          "identity_verified": true
+        }
+      },
+      {
+        "step": "update_record",
+        "data": {
+          "record_id": "PAY-99021",
+          "payment_status": "processed"
+        }
+      }
+    ],
+    "expect": []
+  },
+  {
+    "trace": [
+      {
+        "step": "load_case",
+        "data": {
+          "case_id": "CS-6310",
+          "case_type": "billing_support"
+        }
+      },
+      {
+        "step": "validate_eligibility",
+        "data": {
+          "effective_date": "2026-11-10",
+          "window_days": 30
+        }
+      },
+      {
+        "step": "confirm_customer_request",
+        "data": {
+          "customer_confirmed": true,
+          "identity_verified": true
+        }
+      },
+      {
+        "step": "issue_refund",
+        "data": {
+          "refund_amount": 12.5,
+          "currency": "USD"
+        }
+      }
+    ],
+    "expect": []
+  }
+]
